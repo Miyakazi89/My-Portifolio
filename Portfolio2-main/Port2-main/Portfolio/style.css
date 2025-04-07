@@ -134,8 +134,7 @@ nav .logo {
     text-decoration: none;
 }
 
-#sidemenu .fa-bars,
-#sidemenu .fa-xmark {
+#sidemenu .fa-bars{
     display: none; /* Hide the menu icons */
 }
 
@@ -840,4 +839,133 @@ form input, form textarea{
 
 
 
- 
+ .inner{
+    padding-top: 20px;
+
+}
+.headerr{
+    text-align: center;
+    color: antiquewhite;;
+    padding: 1rem;
+    position: relative;
+}
+.headerrafter{
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  height: 4px;
+  width: 100px;
+  background-color: #2ecc71;
+  border-radius: 2px;
+}
+.containerr{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-gap: 1rem;
+    padding: 1rem 80px;
+    font-size: 1.2rem;
+}
+.skilll-box{
+   padding: 1rem;
+   color:antiquewhite;;
+   cursor: pointer;
+}
+.skilll-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+.skilll-title:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 0;
+    height: 4px;
+    border-radius: 2px 0 0 2px;
+    background-color: #ff004f;
+    transition: .5s;
+}
+.skilll-title:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    border-radius: 0 2px 2px 0;
+    background-color:#ff004f;
+    transition: .5s;
+}
+.imgg{
+    width: 90px;
+    height: 90px;
+    position: relative;
+    border-radius: 45px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.skilll-box:hover > .skilll-title:after, .skilll-box:hover > .skilll-title::before{
+    width: 35px;
+}
+.skilll-box:hover .img{
+    transform: translateY(-10px);
+}
+.skilll-title h3{
+    color:antiquewhite;
+    margin-top: 0.5rem;
+}
+.skilll-icon{
+    width: 50px;
+    z-index: 2;
+}
+.imgg:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 90px;
+    background: rgb(100, 100, 100,0.5);
+    border-radius: 45px 0 0 45px;
+
+
+}
+.imgg img {
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* When hovering over the container, zoom and glow the image */
+.imgg:hover img {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+
+/* Optional: Glow border effect */
+.imgg:hover {
+    box-shadow: 0 0 15px;
+}
+
+@media screen and (max-width: 990px) {
+    .containerr {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2rem 50px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .containerr {
+        grid-template-columns: 1fr;
+    }
+}
