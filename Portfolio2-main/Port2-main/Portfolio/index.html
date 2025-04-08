@@ -12,7 +12,11 @@
        
         <div class="container">
             <nav>
-                <span class="logo"><span class="first-name">Miyakazi</span> <span class="last-name">M</span></span>
+                <span class="logo" id="typewriter-logo">
+                    <span class="first-name">Miyakazi</span>
+                    <span class="last-name">M</span>
+                  </span>
+                  
             <ul id="sidemenu">
                 <li class="active"><a href="">Home</a></li>
                 <li ><a href="#about-mee">About</a></li>
@@ -30,7 +34,7 @@
         </nav>
         <div class="header-text">
             <p>App Developer</p>
-            <h1>Hi, I'm <span>Miyakazi Mafuduka</span>, a Full Stack Developer.</h1>
+            <h1>Hi, I'm <span id="typewriter-name"></span>, a Full Stack Developer.</h1>
         </div>
         
         
@@ -50,13 +54,14 @@
                 <img src="images/WhatsApp_Image_-removebg-preview.png" alt="image"> 
             </div>
             <div class="colum2">
-                <h2 class="title">About Me</h2>
-                
-                <p>Hello! I'm a passionate and dedicated web developer with a strong foundation in Information and Communication Technology, holding an Advanced Diploma in ICT with a focus on Application Development. My journey into tech began with a deep curiosity about how things work behind the scenes and a desire to create tools and applications that make life easier for others.
+                <h2 class="title typewriter" id="typewriter-title" data-text="About Me"></h2>
 
-                    Throughout my experience as a Support Engineer and Software Developer Intern, I’ve honed my problem-solving skills and developed a knack for quickly adapting to new challenges. Now, I’m focusing on advancing my skills in web development, where I combine my technical knowledge with creativity to build responsive, user-friendly websites.
-                    
-                    I’m always eager to learn and embrace new technologies, and I’m committed to building a career in web development where I can contribute meaningful projects to the world. Let’s connect and explore how we can create something impactful together!</p>
+<p id="typewriter-text" class="typewriter-paragraph" data-text="Hello! I'm a passionate and dedicated Full stack developer with a strong foundation in Information and Communication Technology, holding an Advanced Diploma in ICT with a focus on Application Development.
+
+Throughout my experience as a Support Engineer and Software Developer Intern, I’ve honed my problem-solving skills and developed a knack for quickly adapting to new challenges. Now, I’m focusing on advancing my skills in Fullstack development, where I combine my technical knowledge with creativity to build responsive, user-friendly websites.
+
+I’m always eager to learn and embrace new technologies, and I’m committed to building a career in web development where I can contribute meaningful projects to the world. Let’s connect and explore how we can create something impactful together!"></p>
+
                <div class="tab-titles">
                 <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
                 <p class="tab-links" onclick="opentab('Experience')">Experience</p>
@@ -321,6 +326,79 @@
     function closemenu() {
         sidemenu.style.right = "-200px";
     }
+
+
+  
+        // Type name
+  document.addEventListener("DOMContentLoaded", function () {
+    const fullName = "Miyakazi Mafuduka"; // Full name
+  const firstName = "Miyakazi";        // First name
+  const lastName = "M";                // Last name
+  const nameTarget = document.getElementById("typewriter-name");
+  const logoTarget = document.getElementById("typewriter-logo");
+  const firstNameTarget = document.querySelector("#typewriter-logo .first-name");
+  const lastNameTarget = document.querySelector("#typewriter-logo .last-name");
+
+  // General typewriter function
+  function typeWriter(element, text, speed, callback) {
+    let i = 0;
+    element.textContent = ""; 
+
+    function typing() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(typing, speed);
+      } else if (callback) {
+        callback();
+      }
+    }
+
+    typing();
+  }
+
+  // Function to start full typing sequence
+  function startTypewriterSequence() {
+   
+    typeWriter(firstNameTarget, firstName, 120, function () {
+     
+      typeWriter(lastNameTarget, lastName, 120, function () {
+      
+        typeWriter(nameTarget, fullName, 150, function () {
+        
+          const title = document.getElementById("typewriter-title");
+          const paragraph = document.getElementById("typewriter-text");
+
+          const titleText = title.getAttribute("data-text");
+          const paragraphText = paragraph.getAttribute("data-text");
+
+          title.textContent = "";
+          paragraph.textContent = "";
+
+          typeWriter(title, titleText, 80, function () {
+            typeWriter(paragraph, paragraphText, 25);
+          });
+        });
+      });
+    });
+  }
+
+  // Initial call
+  startTypewriterSequence();
+
+  // Calculate total time and repeat the whole thing
+  const totalTypingTime =
+    firstName.length * 120 +  // Time for first name
+    lastName.length * 120 +   // Time for last name
+    fullName.length * 150 +   // Time for full name
+    "About Me".length * 80 +  // Time for title
+    document.getElementById("typewriter-text").getAttribute("data-text").length * 25 + 
+    2000; 
+
+  setInterval(startTypewriterSequence, totalTypingTime);
+});
 </script>
 
+
+    
 </html>

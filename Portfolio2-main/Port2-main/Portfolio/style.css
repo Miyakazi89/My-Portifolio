@@ -39,6 +39,19 @@ body{
  }
  
 
+ #typewriter-name::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+    color: black; /* You can match your theme color */
+  }
+  
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+
 /* Styling for the logo as text */
 nav .logo {
     font-size: 24px; 
@@ -372,7 +385,7 @@ animation-iteration-count: 5s;
     
 }
 .title{
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 60%;
 }
 .tab-titles{
@@ -416,6 +429,34 @@ width:50%;
 }
 
 
+@media (max-width:768px) {
+    .tab-links {
+        font-size: 30px; /* increase font size for better readability */
+    }
+
+    .tab-contents ul li span {
+        font-size: 16px;
+    }
+}
+.typewriter {
+    border-right: 2px solid #000;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+  }
+  
+  .typewriter-paragraph {
+    font-size: 16px; 
+    line-height: 1.6;
+  }
+  
+
 /* projects*/
 #projects{
     padding-top: 60px; 
@@ -435,7 +476,7 @@ width:50%;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 1em;
     margin-bottom: 20px;
     color: antiquewhite;
 }
@@ -725,10 +766,13 @@ form input, form textarea{
      }
 
     .tab-links{
-        font-size: 12px;
+        font-size: 16px;
         margin-right: 20px;
     }
-
+    
+    .tab-contents ul li span {
+        font-size: 15px;
+    }
     .contact-left, .contact-right{
         flex-basis: 100%;
     }
@@ -751,6 +795,11 @@ form input, form textarea{
         font-size: 12px;
     }
  }
-
-
-
+  
+  /* 🔽 For smaller screens */
+  @media (max-width: 600px) {
+    .typewriter-paragraph {
+      font-size: 15px; 
+    }
+  }
+  
