@@ -208,7 +208,7 @@ body {
 }
 .headerr{
     text-align: center;
-    color: antiquewhite;;
+    color: antiquewhite;
     padding: 1rem;
     position: relative;
 }
@@ -235,7 +235,7 @@ body {
 }
 .skilll-box{
    padding: 1rem;
-   color:antiquewhite;;
+   color:antiquewhite;
    cursor: pointer;
 }
 .skilll-title{
@@ -480,6 +480,7 @@ h2 {
     font-size: 1em;
     margin-bottom: 20px;
     color: antiquewhite;
+    
 }
 
 .project-container {
@@ -540,7 +541,7 @@ h2 {
 /* contact me style */
 
 #contact{
-    padding:50px 0;
+    
     background-color: #121212; 
 }
 .contact-left{
@@ -633,6 +634,9 @@ form input, form textarea{
     padding:30px 0;
 }
 
+#workk title{
+    text-align: center;
+}
 .worklis{
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
@@ -703,7 +707,7 @@ form input, form textarea{
    width:100%;
    text-align: center;  
    padding:25px 0;
-   
+   color:  antiquewhite;
    font-weight: 300;
    margin-top: 20px;
 
@@ -804,3 +808,202 @@ form input, form textarea{
     }
   }
   
+/* SECTION HEADINGS */
+section h2 {
+  font-size: 1.9rem;
+  text-align: center;
+  color: antiquewhite;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}
+
+/* CERTIFICATIONS SECTION */
+.certifications {
+   background: #080808;
+  padding: 60px 20px;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cert-card {
+  background-color: transparent;
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 20px;
+  color: antiquewhite;
+}
+
+.cert-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color:antiquewhite;
+}
+
+/* SERVICES SECTION */
+.services {
+ background: #080808;
+  padding: 60px 20px;
+}
+
+.services p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: antiquewhite;
+  font-size: 1.1rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #121212;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 25px;
+  color: antiquewhite;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: antiquewhite;
+}
+
+.service-card p {
+  color:antiquewhite;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ICON STYLE INSIDE CARDS */
+.service-card i, .service-card svg {
+  font-size: 24px;
+  color: #ff2c2c;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* BUTTON STYLE */
+.service-card button {
+  margin-top: 15px;
+  padding: 10px 18px;
+  background-color: #ff004f;;
+  border: 1px solid #ffffff;
+  color: antiquewhite;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-card button:hover {
+  background-color: #ff2c2c;
+  border-color: #ff2c2c;
+  color:antiquewhite;
+}
+
+.service-card i {
+  font-size: 32px;
+  color: #ff2c2c;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+
+/* === RESPONSIVE STYLES === */
+/* === RESPONSIVE STYLES === */
+@media (max-width: 768px) {
+  section h2 {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .certifications, .services {
+    padding: 35px 15px;
+  }
+
+  .cert-card, .service-card {
+    padding: 16px;
+  }
+
+  .cert-card h3,
+  .service-card h3 {
+    font-size: 1rem;
+  }
+
+  .cert-card ul li {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .services p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+  }
+
+  .service-card i, .service-card svg {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .service-card button {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  .certifications-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cert-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .cert-card ul li {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+  }
+
+  .services p {
+    font-size: 0.9rem;
+  }
+
+  .service-card button {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}
